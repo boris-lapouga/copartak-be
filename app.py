@@ -1,6 +1,7 @@
 import requests
 import re
 import json
+import os
 from bs4 import BeautifulSoup
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
@@ -224,5 +225,6 @@ def generate_possible_slugs(data):
 
     return combinations
 
-if __name__ == '__main__':
-    app.run(debug=True, port=3050)
+""" if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port) """
